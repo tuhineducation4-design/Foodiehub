@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <!-- SEO META TAGS -->
+<meta name="description" content="FoodieHub lets you order delicious food online with fast delivery, amazing deals, and a smooth ordering experience inspired by KFC and Domino’s.">
+
+<meta name="keywords" content="online food order, food delivery, fast food, FoodieHub, order food online, burgers, chicken, pizza">
+
+<meta name="author" content="FoodieHub Team">
+
+<meta name="robots" content="index, follow">
+  <!-- OPEN GRAPH / SOCIAL MEDIA -->
+<meta property="og:title" content="FoodieHub – Order Food Online Fast">
+<meta property="og:description" content="Order fresh, delicious food with lightning-fast delivery. Enjoy exclusive deals only on FoodieHub.">
+<meta property="og:image" content="https://yourdomain.com/preview.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com">
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FoodieHub – Fast Food Delivery">
+<meta name="twitter:description" content="Hungry? Order food online instantly with fast delivery and great offers on FoodieHub.">
+<meta name="twitter:image" content="https://yourdomain.com/preview.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>FoodieHub</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f6f6f6;
+  color:#111;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 24px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+
+.logo{
+  font-size:26px;
+  font-weight:800;
+  color:#e4002b;
+}
+    
+.logo span{
+    color:#808080;
+}
+    
+.nav-links{
+  display:flex;
+  gap:24px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-weight:600;
+  color:#808080;
+}
+
+.nav-right{
+  display:flex;
+  gap:16px;
+  font-weight:600;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:80vh;
+  background:
+    linear-gradient(to right,rgba(0,0,0,0.7),rgba(0,0,0,0.3)),
+    url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover;
+  display:flex;
+  align-items:center;
+  padding:40px;
+  color:white;
+}
+
+.hero h1{
+  font-size:52px;
+  font-weight:800;
+  max-width:500px;
+}
+
+.hero button{
+  margin-top:20px;
+  padding:14px 34px;
+  border:none;
+  border-radius:40px;
+  background:#e4002b;
+  color:white;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ================= DEAL TIMER ================= */
+.deal{
+  max-width:1100px;
+  margin:40px auto;
+  background:linear-gradient(135deg,#e4002b,#ff4d4d);
+  color:white;
+  padding:30px;
+  border-radius:26px;
+  text-align:center;
+  box-shadow:0 25px 50px rgba(228,0,43,0.4);
+}
+
+.timer{
+  margin-top:16px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.timer div{
+  background:rgba(255,255,255,0.25);
+  padding:14px 18px;
+  border-radius:18px;
+}
+
+/* ================= WHY US ================= */
+.why-us{
+  max-width:1200px;
+  margin:60px auto;
+  padding:20px;
+  text-align:center;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.why-card{
+  background:white;
+  padding:30px 20px;
+  border-radius:26px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.why-card:hover{
+  transform:translateY(-10px);
+}
+
+/* ================= MENU ================= */
+.section{
+  max-width:1200px;
+  margin:60px auto;
+  padding:20px;
+}
+
+.Browse Categories{
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+}
+  
+.menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:18px;
+  text-align:center;
+}
+
+.card button{
+  margin-top:10px;
+  padding:10px 26px;
+  border:none;
+  border-radius:30px;
+  background:#e4002b;
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ccc;
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+}
+    .auth-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.auth-box{
+  background:white;
+  padding:30px;
+  border-radius:24px;
+  width:90%;
+  max-width:320px;
+  text-align:center;
+}
+
+.auth-box input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+.auth-box button{
+  width:100%;
+  padding:12px;
+  background:#e4002b;
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:700;
+}
+
+.auth-box p{
+  margin-top:12px;
+  color:#e4002b;
+  cursor:pointer;
+}
+    body.dark{
+  background:#0f0f0f;
+  color:white;
+}
+
+body.dark .navbar,
+body.dark .nav-links a,
+body.dark .card,
+body.dark .why-card,
+body.dark .auth-box{
+  background:#1b1b1b;
+  color:white;
+}
+    /* ================= ORDER TRACKING ================= */
+.track-box{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.track-card{
+  background:#fff;
+  width:90%;
+  max-width:380px;
+  padding:30px 25px;
+  border-radius:30px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.3);
+  text-align:center;
+  animation:fadeUp 0.4s ease;
+}
+
+.track-card h2{
+  font-size:24px;
+  margin-bottom:20px;
+  font-weight:800;
+}
+
+/* TRACK STEPS */
+.track-steps{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.track-step{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:#f4f4f4;
+  padding:14px 18px;
+  border-radius:18px;
+  font-weight:600;
+}
+
+/* ACTIVE STEP */
+.track-step.active{
+  background:linear-gradient(135deg,#e4002b,#ff4d4d);
+  color:white;
+  box-shadow:0 10px 25px rgba(228,0,43,0.4);
+}
+
+/* ICON */
+.track-icon{
+  font-size:22px;
+}
+
+/* CLOSE BUTTON */
+.track-card button{
+  margin-top:22px;
+  padding:12px 30px;
+  border:none;
+  border-radius:40px;
+  background:#111;
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* DARK MODE */
+body.dark .track-card{
+  background:#1b1b1b;
+  color:white;
+}
+
+body.dark .track-step{
+  background:#2a2a2a;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+    /* ================= FOOTER ================= */
+.site-footer{
+  background:#111;
+  color:#ccc;
+  padding:60px 20px 0;
+  margin-top:80px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.footer-col h3{
+  color:#fff;
+  margin-bottom:15px;
+  font-size:18px;
+}
+
+.footer-col p{
+  font-size:14px;
+  line-height:1.6;
+}
+
+.footer-logo{
+  font-size:26px;
+  font-weight:800;
+  color:#e4002b;
+}
+
+.footer-logo span{
+  color:#fff;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+.footer-col ul li a{
+  text-decoration:none;
+  color:#ccc;
+  transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+  color:#e4002b;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+  display:flex;
+    justify-content:center;
+    align-items:center;
+  gap:15px;
+}
+
+.social-icons a{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#1f1f1f;
+  color:white;
+  font-size:18px;
+  transition:0.3s;
+  text-decoration:none;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#1e1e1e;
+  color:#fff;
+  font-size:18px;
+  transition:all 0.35s ease;
+}
+
+.social-icons a:hover{
+  background:#e4002b;
+  transform:translateY(-5px);
+  box-shadow:0 0 15px rgba(228,0,43,0.7);
+  transform:translateY(-6px) scale(1.08);
+  background:#e4002b;
+  box-shadow:0 10px 25px rgba(228,0,43,0.6);
+}
+    body{
+  animation: pageFade 0.8s ease-in-out;
+}
+
+@keyframes pageFade{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+    .reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">Foodie<span>Hub</span></div>
+  <div class="nav-links">
+    <a href="#">Menu</a>
+    <a href="#">Deals</a>
+    <a href="#">Stores</a>
+  </div>
+  <div class="nav-right" onclick="openAuth()">👤 Login</div>
+    <div class="nav-right">🛒<span id="cartCount">(0)</span></div>
+    <div class="nav-right"onclick="toggleDark()">🌙</div>
+    <div class="track-box" id="trackBox">
+  <div class="track-card">
+    <h2>Order Tracking</h2>
+
+    <div class="track-steps">
+      <div class="track-step active">
+        <span class="track-icon">📦</span> Order Placed
+      </div>
+      <div class="track-step">
+        <span class="track-icon">👨‍🍳</span> Preparing Food
+      </div>
+      <div class="track-step">
+        <span class="track-icon">🛵</span> Out for Delivery
+      </div>
+      <div class="track-step">
+        <span class="track-icon">🏠</span> Delivered
+      </div>
+    </div>
+<a href="#" onclick="openTrack()">Track Order</a>
+    
+    <button onclick="closeTrack()">Close</button>
+  </div>
+</div>
+</div>
+    
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>It’s Finger Lickin’ Good</h1>
+    <button>Order Now</button>
+  </div>
+</section>
+
+<!-- DEAL -->
+<section class="deal">
+  <h2>🔥 Limited Time Offer</h2>
+  <p>Flat ₹100 OFF on orders above ₹299</p>
+  <div class="timer">
+    <div>15 Min</div>
+    <div>00 Sec</div>
+  </div>
+</section>
+<section class="section reveal">
+<!-- MENU -->
+<section class="section">
+  <h2>Browse Categories</h2>
+  <div class="menu">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec">
+          <div class="card-body">
+        <h3>Chicken Buckets</h3>
+        <button onclick="addToCart(1, 'Chicken Buckets')">Add to Cart</button>
+      </div>
+    </div>
+     
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+      <div class="card-body">
+        <h3>Burgers</h3>
+        <button onclick="addToCart(2, 'Burgers')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75">
+      <div class="card-body">
+        <h3>Main Course</h3>
+<button onclick="addToCart(3, 'Main Course')">Add to Cart</button>
+    </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
+      <div class="card-body">
+        <h3>Beverages</h3>
+        <button onclick="addToCart(4, 'Beverages')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+  
+<!-- WHY US -->
+<section class="why-us">
+  <h2>Why Choose FoodieHub?</h2>
+  <div class="why-grid">
+    <div class="why-card">🚀<h3>Fast Delivery</h3><p>Hot & fresh food</p></div>
+    <div class="why-card">🧼<h3>Hygienic</h3><p>Clean & safe kitchens</p></div>
+    <div class="why-card">💳<h3>Easy Payment</h3><p>UPI, Card, COD</p></div>
+    <div class="why-card">⭐<h3>Top Rated</h3><p>Loved by customers</p></div>
+  </div>
+</section>
+    
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h2 class="footer-logo">Foodie<span>Hub</span></h2>
+      <p>Delicious food delivered fast & fresh at your doorstep.</p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="footer-col">
+      <h3>Support</h3>
+      <ul>
+        <li>📞 +91 98000 03815 </li>
+        <li>✉️ support@foodiehub.com</li>
+        <li>⏰ 10 AM – 11 PM</li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fas fa-globe"></i></a>
+</div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 FoodieHub. All rights reserved.
+  </div>
+</footer>
+    
+<!-- LOGIN MODAL -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box">
+    <h2 id="authTitle">Login</h2>
+    <input type="text" id="email" placeholder="Email">
+    <input type="password" id="password"placeholder="Password">
+    <button onclick="loginUser()">Continue</button>
+    <p onclick="toggleAuth()">New here? Sign up</p>
+  </div>
+</div>
+    <script>
+let isLogin = true;
+function openAuth(){
+  document.getElementById("authModal").style.display="flex";
+}
+function closeAuth(){
+  document.getElementById("authModal").style.display="none";
+}
+function toggleAuth(){
+  isLogin=!isLogin;
+  document.getElementById("authTitle").innerText = isLogin?"Login":"Sign Up";
+}
+</script>
+  <script>
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+// Update cart count badge
+function updateCartCount() {
+  let count = 0;
+  for (let id in cart) {
+    count += cart[id].qty;
+  }
+  document.getElementById("cartCount").innerText = `(${count})`;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Add item (NO BACKEND HERE)
+function addToCart(id, name, price) {
+  if (cart[id]) {
+    cart[id].qty++;
+  } else {
+    cart[id] = { name: name, qty: 1, price: price };
+  }
+  updateCartCount();
+}
+
+// Increase quantity
+function increaseQty(id) {
+  cart[id].qty++;
+  updateCartCount();
+  renderCart();
+}
+
+// Decrease quantity
+function decreaseQty(id) {
+  cart[id].qty--;
+  if (cart[id].qty <= 0) {
+    delete cart[id];
+  }
+  updateCartCount();
+  renderCart();
+}
+
+// Remove item
+function removeItem(id) {
+  delete cart[id];
+  updateCartCount();
+  renderCart();
+}
+
+// Render cart (optional UI)
+function renderCart() {
+  const box = document.getElementById("cartBox");
+  if (!box) return;
+
+  box.innerHTML = "<h3>Your Cart</h3>";
+  for (let id in cart) {
+    box.innerHTML += `
+      <div>
+        <b>${cart[id].name}</b>
+        <button onclick="decreaseQty(${id})">−</button>
+        ${cart[id].qty}
+        <button onclick="increaseQty(${id})">+</button>
+        <button onclick="removeItem(${id})">❌</button>
+      </div>
+    `;
+  }
+}
+
+//Init on page load
+updateCartCount();
+</script>
+
+
+
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+</script>
+<script>
+function openTrack(){
+  document.getElementById("trackBox").style.display="flex";
+}
+function closeTrack(){
+  document.getElementById("trackBox").style.display="none";
+}
+</script>
+    <script>
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if(top < windowHeight - 100){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+ 
+<script>
+async function loginUser() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const url = isLogin
+      ? "http://127.0.0.1:5000/login"
+      : "http://127.0.0.1:5000/signup";
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: email,
+        password: password
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(isLogin ? "Login Successful" : "Signup Successful");
+      closeAuth();
+    } else {
+      alert(data.message || "Failed");
+    }
+
+  } catch (error) {
+    alert("Server not reachable");
+    console.log(error);
+  }
+}
+</script>
+
+  <script>
+async function loadMenu() {
+  const res = await fetch("http://127.0.0.1:5000/menu");
+  const items = await res.json();
+
+  const menuDiv = document.querySelector(".menu");
+  menuDiv.innerHTML = "";
+
+  items.forEach(item => {
+    menuDiv.innerHTML += `
+      <div class="card">
+        <img src="${item.image}">
+        <div class="card-body">
+          <h3>${item.name}</h3>
+          <button onclick="addToCart(${item.id}, '${item.name}', ${item.price})">
+  Add to Cart
+</button>
+
+        </div>
+      </div>
+    `;
+  });
+}
+
+loadMenu();
+</script>
+</body>
+</html>
